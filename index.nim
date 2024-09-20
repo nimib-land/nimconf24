@@ -1,6 +1,6 @@
 import nimib, nimislides
 import our
-#import agenda
+import nimibland, about_nimislides, about_nimibook, nimibpy
 
 template titleSlide* =
   slide:
@@ -12,4 +12,12 @@ template titleSlide* =
 when isMainModule:
   myInit("index")
   titleSlide
+  slide:
+    nimibland.all
+  slide:
+    about_nimislides.all
+  slide:
+    about_nimibook.all
+  slide:
+    nimibpy.all
   nbSave
