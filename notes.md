@@ -14,6 +14,10 @@ recall: video by 13th!
 
 let's try first to record separately, if we manage we might do a recording together
 
+### idea
+
+record together conversation about NimibLand, like we would do in NimibSpeakingHours (no slides)
+
 ### first notes
 
 updates from NimibLand talk (target 20-30 mins), ideas for content
