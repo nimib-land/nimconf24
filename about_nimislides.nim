@@ -7,15 +7,26 @@ template sectionSlide* =
 ## News from Nimislides
 """
 
-template aSecondSlide* =
+template docs1* =
   slide:
-    nbText: "whatever"
+    nbText: "## Documentation"
+    unorderedList:
+      listItem: nbText: "Tutorials"
+      listItem: nbText: "Embedded examples"
+
+template docsExample1* =
+  slide(slideOptions(iframeBackground="https://hugogranstrom.com/nimiSlides/tutorials/layout.html")):
+    discard
+
+
+
 
 template all* =
   sectionSlide
-  aSecondSlide
+  docs1
+  docsExample1
 
 when isMainModule:
   myInit("about_nimislides")
-  all
+  docsExample1
   nbSave
