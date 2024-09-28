@@ -27,16 +27,18 @@ template nimibIntro* =
           let x = 2
           echo "x is: ", x
 
-template nimibIntroExample* =
+template nimibInteractiveExample* =
   slide:
-    nimibCodeAnimate(1 .. 3, 4..5):
+    nbText: "## Interactivity"
+  slide:
+    nimibCodeAnimate(1, 5..7, 9..15, 17..20, 22..27, 29..30, 31..48, 49..50, 52, 53..57):
       nbKaraxCode:
         import std/[strformat, random]
         import karax/vstyles
 
         var score = 0
         var active_button_idx = -1
-        let num_buttons = 4
+        let num_buttons = 4 # 7
 
         proc setInterval(cb: proc(), interval: int): Interval {.discardable.} =
           kdom.setInterval(
@@ -44,25 +46,23 @@ template nimibIntroExample* =
               cb()
               if not kxi.surpressRedraws: redraw(kxi)
             , interval
-          )
+          ) # 15
 
         proc update =
           active_button_idx = rand(0 ..< num_buttons)
 
-        update()
-        setInterval(update, 1000)
+        setInterval(update, 1000) # 20
 
         proc onButtonHit(idx: int): proc() =
           result = proc () =
-            echo idx
             if active_button_idx == idx:
                 score += 1
                 # reset
-                active_button_idx = -1
+                active_button_idx = -1 # 27
 
         proc renderButton(i: int): VNode =
           let isActive = i == active_button_idx
-          var styles: seq[(StyleAttr, kstring)] = @[
+          var styles: seq[(StyleAttr, kstring)] = @[ # 31
             (width, "10vw".kstring), (height, "10vh"),
             (fontSize, "24px"), (margin, "1vw"),
             (border, "none"), (borderRadius, "15px"),
@@ -79,21 +79,16 @@ template nimibIntroExample* =
             styles.add @[
               (backgroundColor, "#11111".kstring),
               (pointerEvents, "none")
-            ]
+            ] # 48
           result = buildHtml(button(onClick = onButtonHit(i), style=style(styles))):
             text($i)
 
-        karaxHtml:
+        karaxHtml: # 52
           h3:
             text &"Score: {score}"
           tdiv:
             for i in 0 ..< num_buttons:
               renderButton(i)
-           
-                
-
-
-          
 
 template videoReferences* =
   slide:
@@ -111,7 +106,7 @@ template videoReferences* =
 template all* =
   sectionSlide
   nimibIntro
-  nimibIntroExample
+  nimibInteractiveExample
   videoReferences
 
 when isMainModule:
