@@ -18,7 +18,7 @@ template reference*(text: string) =
 
 template myInit*(sourceFileRel = "my.nim") =
   nbInit(thisFileRel=sourceFileRel, theme=revealTheme)
-  setSlidesTheme(Simple)
+  setSlidesTheme(Dracula)
   addNbTextSmall
   nbRawHtml """
 <style>
@@ -29,3 +29,5 @@ template myInit*(sourceFileRel = "my.nim") =
 
 </style>
 """ % [colorAgile]
+  nb.partials["nimibCodeAnimate"] = nb.partials["animateCode"]
+  nb.renderPlans["nimibCodeAnimate"] = nb.renderPlans["animateCode"]

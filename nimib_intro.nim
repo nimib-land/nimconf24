@@ -1,5 +1,5 @@
 import nimib, nimislides
-import our
+import our, hugo
 
 template sectionSlide* =
   slide:
@@ -13,65 +13,68 @@ template listText*(s: string) =
 
 template nimibIntro* =
   slide:
-    nbKaraxCode:
-      import std/[strformat, random]
-      import karax/vstyles
+    nimibCodeAnimate(1 .. 3, 4..5):
+      nbKaraxCode:
+        import std/[strformat, random]
+        import karax/vstyles
 
-      var score = 0
-      var active_button_idx = -1
-      let num_buttons = 5
+        var score = 0
+        var active_button_idx = -1
+        let num_buttons = 5
 
-      proc setInterval(cb: proc(), interval: int): Interval {.discardable.} =
-        kdom.setInterval(proc =
-          cb()
-          if not kxi.surpressRedraws: redraw(kxi)
-        , interval)
+        proc setInterval(cb: proc(), interval: int): Interval {.discardable.} =
+          kdom.setInterval(
+            proc =
+              cb()
+              if not kxi.surpressRedraws: redraw(kxi)
+            , interval
+          )
 
-      proc update =
-        active_button_idx = rand(0 ..< num_buttons)
+        proc update =
+          active_button_idx = rand(0 ..< num_buttons)
 
-      update()
-      setInterval(update, 1000)
+        update()
+        setInterval(update, 1000)
 
-      proc onButtonHit(idx: int): proc() =
-        result = proc () =
-          echo idx
-          if active_button_idx == idx:
-              score += 1
-              # reset
-              active_button_idx = -1
+        proc onButtonHit(idx: int): proc() =
+          result = proc () =
+            echo idx
+            if active_button_idx == idx:
+                score += 1
+                # reset
+                active_button_idx = -1
 
-      proc renderButton(i: int): VNode =
-        let isActive = i == active_button_idx
-        var styles: seq[(StyleAttr, kstring)] = @[
-          (width, "10vw".kstring), (height, "10vh"),
-          (fontSize, "24px"), (margin, "1vw"),
-          (border, "none"), (borderRadius, "15px"),
-          (transition, "transform 0.1s ease-in, box-shadow 0.1s ease-in")
-        ]
-        if isActive:
-          styles.add @[
-            (backgroundColor, "#04AA6D".kstring),
-            (boxShadow, "0 9px #999"),
-            (transform, "translateY(-9px)"),
-            (cursor, "grab")
+        proc renderButton(i: int): VNode =
+          let isActive = i == active_button_idx
+          var styles: seq[(StyleAttr, kstring)] = @[
+            (width, "10vw".kstring), (height, "10vh"),
+            (fontSize, "24px"), (margin, "1vw"),
+            (border, "none"), (borderRadius, "15px"),
+            (transition, "transform 0.1s ease-in, box-shadow 0.1s ease-in")
           ]
-        else:
-          styles.add @[
-            (backgroundColor, "#11111".kstring),
-            (pointerEvents, "none")
-          ]
-        result = buildHtml(button(onClick = onButtonHit(i), style=style(styles))):
-          text($i)
+          if isActive:
+            styles.add @[
+              (backgroundColor, "#04AA6D".kstring),
+              (boxShadow, "0 9px #999"),
+              (transform, "translateY(-9px)"),
+              (cursor, "grab")
+            ]
+          else:
+            styles.add @[
+              (backgroundColor, "#11111".kstring),
+              (pointerEvents, "none")
+            ]
+          result = buildHtml(button(onClick = onButtonHit(i), style=style(styles))):
+            text($i)
 
-      karaxHtml:
-        h2:
-          text "Whack-a-button"
-        h3:
-          text &"Score: {score}"
-        tdiv:
-          for i in 0 ..< num_buttons:
-            renderButton(i)
+        karaxHtml:
+          h2:
+            text "Whack-a-button"
+          h3:
+            text &"Score: {score}"
+          tdiv:
+            for i in 0 ..< num_buttons:
+              renderButton(i)
            
                 
 
