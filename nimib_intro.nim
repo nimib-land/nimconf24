@@ -12,6 +12,22 @@ template listText*(s: string) =
     nbText: s
 
 template nimibIntro* =
+  autoAnimateSlides(4):
+    nbText: "## Basics"
+    showAt(2):
+      nimibCode:
+        nbText: "This *is* **text**"
+    showAt(3, 4):
+      nbCodeSkip:
+        nbCode:
+          let x = 2
+          echo "x is: ", x
+    showAt(4):
+        nbCode:
+          let x = 2
+          echo "x is: ", x
+
+template nimibIntroExample* =
   slide:
     nimibCodeAnimate(1 .. 3, 4..5):
       nbKaraxCode:
@@ -20,7 +36,7 @@ template nimibIntro* =
 
         var score = 0
         var active_button_idx = -1
-        let num_buttons = 5
+        let num_buttons = 4
 
         proc setInterval(cb: proc(), interval: int): Interval {.discardable.} =
           kdom.setInterval(
@@ -68,8 +84,6 @@ template nimibIntro* =
             text($i)
 
         karaxHtml:
-          h2:
-            text "Whack-a-button"
           h3:
             text &"Score: {score}"
           tdiv:
@@ -97,6 +111,7 @@ template videoReferences* =
 template all* =
   sectionSlide
   nimibIntro
+  nimibIntroExample
   videoReferences
 
 when isMainModule:
