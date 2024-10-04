@@ -64,7 +64,7 @@ template myInit*(sourceFileRel = "my.nim") =
   nb.partials["nimibCodeAnimate"] = nb.partials["animateCode"]
   nb.renderPlans["nimibCodeAnimate"] = nb.renderPlans["animateCode"]
   nb.partials["logo"] = """
-<div id="agileLabLogo" style="background: url(https://raw.githubusercontent.com/nimib-land/assets/refs/heads/main/nimib_logo_white_cup.svg);
+<div id="nimibLandLogo" style="background: url(https://raw.githubusercontent.com/nimib-land/assets/refs/heads/main/nimib_logo_white_cup.svg);
 background-repeat: no-repeat;
 background-size: contain;
 position: absolute;
