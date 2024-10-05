@@ -43,11 +43,6 @@ li {
 }
 """ % [nimYellow]
 
-template nimConfSlide*(body: untyped) =
-  slide:
-    cornerImage("https://raw.githubusercontent.com/nimib-land/assets/refs/heads/main/nimib_logo_white_bg_4k.png", UpperRight, size=100, animate=false)
-    body
-
 template myInit*(sourceFileRel = "my.nim") =
   nbInit(thisFileRel=sourceFileRel, theme=revealTheme)
   nimConfTheme()
@@ -63,3 +58,23 @@ template myInit*(sourceFileRel = "my.nim") =
 """ % [colorAgile]
   nb.partials["nimibCodeAnimate"] = nb.partials["animateCode"]
   nb.renderPlans["nimibCodeAnimate"] = nb.renderPlans["animateCode"]
+  nb.partials["logo"] = """
+<div id="nimibLandLogo" style="background: url(https://raw.githubusercontent.com/nimib-land/assets/refs/heads/main/nimib_logo_white_cup.svg);
+background-repeat: no-repeat;
+background-size: contain;
+position: absolute;
+bottom: 10px;
+left: 10px;
+width: 128px;
+height: 128px;"></div>
+""" # adjust the px as needed
+  nb.partials["document"] = """
+<!DOCTYPE html>
+<html>
+  {{> head}}
+  <body>
+  {{> main}}
+  {{> logo}}
+  </body>
+</html>
+"""
