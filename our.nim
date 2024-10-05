@@ -43,11 +43,6 @@ li {
 }
 """ % [nimYellow]
 
-template nimConfSlide*(body: untyped) =
-  slide:
-    cornerImage("https://raw.githubusercontent.com/nimib-land/assets/refs/heads/main/nimib_logo_white_bg_4k.png", UpperRight, size=100, animate=false)
-    body
-
 template myInit*(sourceFileRel = "my.nim") =
   nbInit(thisFileRel=sourceFileRel, theme=revealTheme)
   nimConfTheme()
