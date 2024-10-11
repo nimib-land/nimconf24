@@ -1,5 +1,13 @@
 # work
 
+## oct 11 fri
+
+still need to work on:
+- script/scaletta for live nimib speaking hours
+- nimibland vision
+- nimibook
+- NO nimib.py
+
 ## sep 22 sun
 
 need to work on:
