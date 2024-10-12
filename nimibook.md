@@ -13,6 +13,7 @@ part 1
     - https://can-lehmann.github.io/owlkettle/README
     - why is it not used for nimib documentation? aha!
     - add your own
+- talking about nimibook using nimibook
 
 part 2
 - how to start (demo?)
@@ -25,6 +26,19 @@ part 3
 
 ## plan for Sat Oct 12
 
+- watched both videos by Hugo (7' intro to nimib, 10' news from nimislides) [x]
+  - made me think: order of stuff and transitions (and target durations) [x]
+    - 2' title, agenda (both recording together)
+      - transition with Pietro saying: Hugo will now do a very short introduction to Nimib for those who do not know it
+    - 7' intro to nimib (hugo)
+    - X nimib speaking hours (both)
+      - includes intro to nimibland and nimib.py by pietro
+      - transitions with Pietro introducing Hugo
+    - 10' news from nimislides (hugo)
+    - Y intro to nimibook (pietro)
+    - 1' thank you and goodbye
+    - total: 20' + X + Y
+      - try to make X <= 5' and Y <= 10' to have total <= 35'
 - finalize slides and record part 1
-- script and record part 2
-- see what can be done about part 3 (or skip)
+- script and record part 2 (or maybe I do not even need it?)
+- see what can be done about part 3 (or skip). decided to skip already [x]
