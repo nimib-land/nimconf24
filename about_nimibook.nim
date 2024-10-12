@@ -79,6 +79,45 @@ or let nim decide for you
 template nimibookExample* =
   slide:
     nbText "### A nimibook example"
+  slide:
+    nbImage("scinim.png")
+    nbText "[scinim.github.io/getting-started](https://scinim.github.io/getting-started/basics/basic_plotting.html)"
+  slide:
+    nbText """### `toc.nim`
+```nim
+import nimibook
+
+var book = initBookWithToc:
+  entry("Introduction", "index.md")
+  entry("Ecosystem overview", "overview/index.md")
+  section("Basic topics", "basics/index.md"):
+    entry("Common datatypes", "common_datatypes")
+    entry("Data wrangling with dataframes", "data_wrangling")
+    entry("Plotting", "basic_plotting")
+    ...
+
+nimibookCli(book)
+```
+"""
+  slide:
+    nbText """### `content.nim`
+```nim
+import nimib, nimibook
+
+nbInit(theme = useNimibook)
+
+nbCode:
+  import ggplotnim
+  let x1 = @[0.0, 1.0, 2.0, 3.0]
+  let y1 = @[0.0, 1.0, 4.0, 9.0]
+  let df1 = toDf(x1, y1)
+  ggplot(df1, aes("x1", "y1")) +
+    geom_line() +
+    ggsave("images/line_plot.png")
+
+nbImage("images/line_plot.png")
+```
+"""
 
 template howIstart* =
   slide:
@@ -93,11 +132,13 @@ template all* =
   slide:
     what
     mdbookExample
-  nimibookExample
+  slide:
+    nimibookExample
   howIstart
   howIcontribute
 
 when isMainModule:
   myInit("about_nimibook")
-  all
+  nimibookExample
+  #all
   nbSave
