@@ -31,6 +31,19 @@ template autoAnimationShowcase* =
       nbText: "Show from frame 3"
     showText(@[({1..5}, "Frame: "), ({1}, "1"), ({2}, "2"), ({3}, "3"), ({4}, "4"), ({5}, "5")])
 
+template typicalExample* =
+  autoAnimateSlides(6):
+    nbText: "## Usage example"
+    showUntil(2):
+      nbText: "Example 1"
+    showAt(2..3):
+      fitImage("https://raw.githubusercontent.com/nimib-land/assets/refs/heads/main/nimib_logo_white_cup.svg")
+    showAt(3..4):
+      nbText: "Example 3"
+      nbText: "Example 4"
+    showAt(4..5):
+      nbText: "Example 5"
+
 template autoAnimateBasics* =
   slide:
     nimibCode:
@@ -63,6 +76,7 @@ template all* =
   docs1
   docsExample1
   autoAnimationShowcase
+  typicalExample
   autoAnimateBasics
   showAtSlides
 
