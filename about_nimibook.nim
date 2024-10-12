@@ -122,6 +122,89 @@ nbImage("images/line_plot.png")
 template howIstart* =
   slide:
     nbText "### How I start"
+  autoAnimateSlides(4):
+    nbText "#### `nim r toc init`"
+    showAt(1):
+      nbText """
+In a new folder create a `toc.nim` file:
+
+```nim
+import nimibook
+
+var book = initBookWithToc:
+  entry("Introduction", "index.md")
+  entry("Example", "example")
+
+nimibookCli(book)
+```    
+"""
+      nbTextSmall "you can pick any name instead of `toc` (e.g `nbook`, ...)"
+    showAt(2):
+      nbText """
+result:
+
+```
+.
+├── book
+│   ├── example.nim
+│   └── index.md
+├── docs
+│   └── assets
+│       └── ...
+├── nimib.toml
+└── toc.nim
+```
+"""
+    showAt(3):
+      nbText """
+`example.nim`:
+
+```nim
+import nimib, nimibook
+
+nbInit(theme = useNimibook)
+nbText: "## Example"
+nbSave
+```
+"""
+    showAt(4):
+      nbText """
+`nimib.toml`:
+
+```toml
+[nimib]
+srcDir = "book"
+homeDir = "docs"
+
+[nimibook]
+language = "en-us"
+title = "My book"
+description = "a book built with nimibook"
+```
+"""
+  slide:
+    nbText "#### `nim r toc build`"
+    nbText """
+result:
+
+```
+.
+├── book
+│   ├── example.nim
+│   └── index.md
+├── docs
+│   ├── assets
+│   │   └── ...
+│   ├── book.json
+│   ├── example.html
+│   └── index.html
+├── nimib.toml
+└── toc.nim
+```
+"""
+  slide:
+    nbText "[pietroppeter.github.io/nimibook](https://pietroppeter.github.io/nimibook/cli.html)"
+    nbImage "nimibook.png"
 
 template howIcontribute* =
   slide:
@@ -134,11 +217,11 @@ template all* =
     mdbookExample
   slide:
     nimibookExample
-  howIstart
-  howIcontribute
+  slide:
+    howIstart
+  #howIcontribute
 
 when isMainModule:
   myInit("about_nimibook")
-  nimibookExample
-  #all
+  all
   nbSave
