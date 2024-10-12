@@ -1,11 +1,12 @@
 ## nimibook content draft
 
 part 1
-- what is nimibook
+- what is nimibook [x]
     - a port of mdbook to nim(ib)
         - popular in rust (rsut book) but see also nim days!
     - a (first) static site generator for nimib
-- examples of usage:
+- example of mdbook 
+- examples of nimibook usage (and show features)
     - scinim
     - https://getenu.com/docs/intro.html
     - norm
@@ -13,7 +14,10 @@ part 1
     - https://can-lehmann.github.io/owlkettle/README
     - why is it not used for nimib documentation? aha!
     - add your own
-- talking about nimibook using nimibook
+- talking about how to use nimibook using nimibook
+- how to contribute/invitation: start from code structure
+    - thanks contributors? or thank them all in a final slide for whole presentation?
+    - and thank also content creators (enu, moigagoo, owlkettle, ...)
 
 part 2
 - how to start (demo?)

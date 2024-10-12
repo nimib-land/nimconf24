@@ -3,9 +3,34 @@
   <head>
     <meta content="text/html; charset=utf-8" http-equiv="content-type">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/theme/simple.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/theme/black.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/highlight/monokai.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+    
+:root {
+  --r-background-color: #181922;
+  --r-heading-color: #FFE953;
+  --r-link-color: #FFE953;
+  --r-selection-color: #FFE953;
+  --r-link-color-dark: darken(#FFE953 , 15%)
+}
+
+.reveal ul, .reveal ol {
+  display: block;
+  text-align: left;
+}
+
+li::marker {
+  color: #FFE953;
+  content: "»";
+}
+
+li {
+  padding-left: 12px;
+}
+
+    </style>
   </head>
   <body>
   <div class="reveal">
@@ -17,11 +42,112 @@
 }
 
 </style>
-      <section data-nimib-slide-number="1" >
-      <h2>Intro to Nimibook</h2>
+      <section data-nimib-slide-number="1" data-auto-animate >
+      <h3>What is Nimibook 👑📚</h3>
       </section>
-      <section data-nimib-slide-number="2" >
-      <p>whatever</p>
+      <section data-nimib-slide-number="2" data-auto-animate >
+      <h3>What is Nimibook 👑📚</h3>
+      <p>nimib works for single documents</p>
+      </section>
+      <section data-nimib-slide-number="3" data-auto-animate >
+      <h3>What is Nimibook 👑📚</h3>
+      <p>nimib works for single documents</p>
+      <p>how do we show a collection of documents?</p>
+      </section>
+      <section data-nimib-slide-number="4" data-auto-animate >
+      <h3>What is Nimibook 👑📚</h3>
+      <p>nimib works for single documents</p>
+      <p>how do we show a collection of documents?</p>
+      <p>enter Nimibook!</p>
+      </section>
+      <section data-nimib-slide-number="5" data-auto-animate >
+      <h3>What is Nimibook 👑📚</h3>
+      <p>Nimibook is</p>
+      </section>
+      <section data-nimib-slide-number="6" data-auto-animate >
+      <h3>What is Nimibook 👑📚</h3>
+      <p>Nimibook is</p>
+      <ol>
+<li>a minimal <strong>static site generator</strong> for nimib</li>
+</ol>
+      </section>
+      <section data-nimib-slide-number="7" data-auto-animate >
+      <h3>What is Nimibook 👑📚</h3>
+      <p>Nimibook is</p>
+      <ol>
+<li>a minimal <strong>static site generator</strong> for nimib</li>
+</ol>
+      <ol start="2">
+<li>implemented using <strong>theme</strong> feature of nimib</li>
+</ol>
+      </section>
+      <section data-nimib-slide-number="8" data-auto-animate >
+      <h3>What is Nimibook 👑📚</h3>
+      <p>Nimibook is</p>
+      <ol>
+<li>a minimal <strong>static site generator</strong> for nimib</li>
+</ol>
+      <ol start="2">
+<li>implemented using <strong>theme</strong> feature of nimib</li>
+</ol>
+      <ol start="3">
+<li>a port of <a href="">mdbook</a></li>
+</ol>
+      </section>
+      <section data-nimib-slide-number="9" data-auto-animate >
+      <h3>What is Nimibook 👑📚</h3>
+      <ol>
+<li>a minimal <strong>static site generator</strong> for nimib</li>
+</ol>
+      <ol start="2">
+<li>implemented using <strong>theme</strong> feature of nimib</li>
+</ol>
+      <ol start="3">
+<li>a port of <a href="">mdbook</a></li>
+</ol>
+      </section>
+      <section data-nimib-slide-number="10" data-auto-animate >
+      <ol>
+<li>a minimal <strong>static site generator</strong> for nimib</li>
+</ol>
+      <ol start="2">
+<li>implemented using <strong>theme</strong> feature of nimib</li>
+</ol>
+      <ol start="3">
+<li>a port of <a href="">mdbook</a></li>
+</ol>
+      <p>so...</p>
+      </section>
+      <section data-nimib-slide-number="11" data-auto-animate >
+      <p>so...</p>
+      <h3>What is mdbook</h3>
+      </section>
+      <section data-nimib-slide-number="12" data-auto-animate >
+      <h3>What is mdbook</h3>
+      <ol>
+<li>a popular <strong>static site generator</strong> (🦀)</li>
+</ol>
+      </section>
+      <section data-nimib-slide-number="13" data-auto-animate >
+      <h3>What is mdbook</h3>
+      <ol>
+<li>a popular <strong>static site generator</strong> (🦀)</li>
+</ol>
+      <ol start="2">
+<li>with a single book theme</li>
+</ol>
+      </section>
+      <section data-nimib-slide-number="14" data-auto-animate >
+      <h3>What is mdbook</h3>
+      <ol>
+<li>a popular <strong>static site generator</strong> (🦀)</li>
+</ol>
+      <ol start="2">
+<li>with a single book theme</li>
+</ol>
+      <ol start="3">
+<li>and with minimal customization</li>
+</ol>
       </section>
     </div>
   </div>
@@ -36,5 +162,13 @@
       ],
     });
   </script>
+  <div id="nimibLandLogo" style="background: url(https://raw.githubusercontent.com/nimib-land/assets/refs/heads/main/nimib_logo_white_cup.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 128px;
+  height: 128px;"></div>
   </body>
 </html>
