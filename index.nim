@@ -9,6 +9,15 @@ template titleSlide* =
 """
     reference "[github.com/nimib-land/nimconf24](https://github.com/nimib-land/nimconf24)"
 
+  slide:
+    nbText: """
+## Agenda
+- Intro to Nimib
+- Nimib Speaking Hours
+  - NimibLand
+- Updates from NimiSlides
+- Intro to NimiBook
+"""
 when isMainModule:
   myInit("index")
   titleSlide
