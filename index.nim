@@ -18,15 +18,14 @@ template titleSlide* =
 - Updates from NimiSlides
 - Intro to NimiBook
 """
+
+template thankyouSlide* =
+  slide:
+    nbText """
+## Thank you
+"""
+
 when isMainModule:
   myInit("index")
-  titleSlide
-  slide:
-    nimibland.all
-  slide:
-    about_nimislides.all
-  slide:
-    about_nimibook.all
-  slide:
-    nimibpy.all
+  thankyouSlide
   nbSave

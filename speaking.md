@@ -1,16 +1,27 @@
 # script for "fake" speaking hours
 
-(H drives screen sharing)
+- P: This is a special ... (show Speaking Hours screen)
+- H: in the past 24 months we did 13 of them, including this one
+- P: not bad...
+- H: the idea behind Nimib Speaking Hours?
+- P: explain idea
+- H: we also had three guests
+- P: ask for agenda
+- H: explain the usual agenda (without diversion)
+- P: so for stuff up to now, we mostly present, there are a couple of things we do not cover
+  - NimibLand
+  - nimib.py
+- P: we usually review issues and PRs, we only look at the NbBlock one now
+- P: for the future, finishing this and completing migration to NimibLand are the main priorities
+(no discussion about commitment)
+- P: pass to Hugo for nimislides
 
-P: Hi Hugo
-H: Hi Pietro
-P: Hi everyone listening, this is a special episode of Nimib Speaking Hours,
-something we started doing... do you remember when Hugo?
-H: (shows https://github.com/pietroppeter/nimib/discussions/categories/nimib-speaking-hours)
-yes, we started right after NimConf and in the past 24 months we did 13 of them, including this one
+This is a special episode of Nimib Speaking Hours,
+something we started doing right after last NimConf in 2022
+H: and in the past 24 months we did 13 of them, including this one
 P: ah not so bad for something that targeted being a monthly event! it has become - on average - once every other month!
 H: yep! why don't you tell us what was the idea behind Nimib Speaking Hours?
-P: well they were inspired by a number of things:
+P: well they were inspired by a couple of things:
 - on one side we started meeting regularly to prepare last nimconf joint presentation and it seemed a good follow up
 - on another side I had seen Simon Willison, a popular open source maintainer in the Python community, offering
 speaking hours for his open source project, with the idea of connecting with his users
@@ -18,7 +29,7 @@ indeed a problem of open source is that most of the time the interaction with th
 they open issues, you rarely hear from happy "customers"
 so one of the initial ideas was to connect with users and we tried to actively push this
 but I do not think we were very succesfull, right Hugo
-H: we started well and we had a couple of guests but then we lost momentum
+H: we also three guests
 P: yes but it worked pretty well for keeping a minimal pace of maintenance over the project and align between the two of us
 getting to talk was motivation to try and do work
 we actually picked up a pretty standard agenda, do you remember what is our usual agenda?
